@@ -1,0 +1,60 @@
+@charset "utf-8";
+// smartphone margin settings
+$margin_sp_row:10px;
+$margin_sp_col:5px;
+$padding_sp: 5px 5px;
+$padding_spnm: 10px 5px;
+
+// tablet margin settings
+$margin_tab_row: 15px;
+$margin_tab_col: 8px;
+$padding_tab: 5px 8px;
+$padding_tabnm: 15px 8px;
+
+// pc margin settings
+$margin_pc_row:20px;
+$margin_pc_col:10px;
+$padding_pc: 5px 10px;
+$padding_pcnm: 20px 10px;
+
+// ie8 margin settings (only % unit)
+$margin_ie_col: 0.5%;
+$padding_ie: 5px 0.5%;
+
+// breackpoint settings 
+$sp:480px;
+$tab:$sp+1px;
+$tabmax:768px;
+$pc:$tabmax+1px;
+
+// container max width
+$container:980px;
+
+// font settings
+$font_serif: "游明朝", "Yu Mincho", YuMincho, "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", serif;
+$font_sanserif:  "游ゴシック", "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+$font_code: Consolas, 'Courier New', Courier, Monaco, monospace, "Osaka－等幅", Osaka-mono, "ＭＳ ゴシック", "MS Gothic";
+
+$font_size: 16px;
+$font_small: 14px;
+
+$line_height: 1.6;
+
+// anchor opacity
+$a_opacity: 0.85;
+$a_filter: alpha(opacity=($a_opacity * 100));
+
+// color settings
+$color_link: #00D;
+$color_form_border: #AAA;
+$color_form_shadow: #CCC;
+$color_form_focus: #5AF;
+
+// clearfix
+@mixin clearfix {
+	clear: both;
+	content: " ";
+	display: block;
+	line-height: 0;
+}
+

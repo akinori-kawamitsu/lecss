@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAGA,IAAK;EACJ,WAAW,EAAE,GAAG",
+"sources": ["chrome.scss"],
+"names": [],
+"file": "chrome.css"
+}

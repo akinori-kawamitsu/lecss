@@ -1,0 +1,557 @@
+@charset "utf-8";
+@import "_parameter";
+/* row-col grid layout */
+.float {
+	width: calc(100% + #{2*$margin_sp_col});
+	margin-left: (-$margin_sp_col);
+		&::after {
+			@include clearfix;
+			}
+}
+.float-nm {
+	width: 100%;
+	margin: 0;
+		&::after {
+			@include clearfix;
+			}
+}
+
+/* float settings (all grids) */
+%colleft {
+	float: left;
+}
+%colright {
+	float: right;
+}
+@for $num from 1 through 12 {
+	.col-#{$num}, .col-pc-#{$num}, .col-tab-#{$num}, .col-sp-#{$num}, .col-#{$num}nm, .col-pc-#{$num}nm, .col-tab-#{$num}nm, .col-sp-#{$num}nm {
+		@extend %colleft;
+	}
+	.col-#{$num}r, .col-pc-#{$num}r, .col-tab-#{$num}r, .col-sp-#{$num}r, .col-#{$num}nmr, .col-pc-#{$num}nmr, .col-tab-#{$num}nmr, .col-sp-#{$num}nmr {
+		@extend %colright;
+	}
+}
+@for $num from 1 through 4 {
+	.col-#{$num}by5, .col-pc-#{$num}by5, .col-tab-#{$num}by5, .col-sp-#{$num}by5, .col-#{$num}by5nm, .col-pc-#{$num}by5nm, .col-tab-#{$num}by5nm, .col-sp-#{$num}by5nm {
+		@extend %colleft;
+	}
+	.col-#{$num}by5r, .col-pc-#{$num}by5r, .col-tab-#{$num}by5r, .col-sp-#{$num}by5r, .col-#{$num}by5nmr, .col-pc-#{$num}by5nmr, .col-tab-#{$num}by5nmr, .col-sp-#{$num}by5nmr  {
+		@extend %colright;
+	}
+}
+@for $num from 1 through 6 {
+	.col-#{$num}by7, .col-pc-#{$num}by7, .col-tab-#{$num}by7, .col-sp-#{$num}by7, .col-#{$num}by7nm, .col-pc-#{$num}by7nm, .col-tab-#{$num}by7nm, .col-sp-#{$num}by7nm {
+		@extend %colleft;
+	}
+	.col-#{$num}by7r, .col-pc-#{$num}by7r, .col-tab-#{$num}by7r, .col-sp-#{$num}by7r, .col-#{$num}by7nmr, .col-pc-#{$num}by7nmr, .col-tab-#{$num}by7nmr, .col-sp-#{$num}by7nmr {
+		@extend %colright;
+	}
+}
+/* width settings @sp screen */
+%colspo {
+	margin: 0 $margin_sp_col $margin_sp_row;
+	padding: $padding_sp;
+	width: calc(100% - #{2*$margin_sp_col});
+}
+%colsponm {
+	margin: 0 0 $margin_sp_row;
+	padding: $padding_spnm;
+	width: 100%;
+}
+
+@for $num from 1 through 12 {
+	.col-#{$num}, .col-pc-#{$num}, .col-tab-#{$num}, .col-#{$num}r, .col-pc-#{$num}r, .col-tab-#{$num}r {
+		@extend %colspo;
+	}
+	.col-#{$num}nm, .col-pc-#{$num}nm, .col-tab-#{$num}nm, .col-#{$num}nmr, .col-pc-#{$num}nmr, .col-tab-#{$num}nmr {
+		@extend %colsponm;
+	}
+}
+@for $num from 1 through 4 {
+	.col-#{$num}by5, .col-pc-#{$num}by5, .col-tab-#{$num}by5, .col-#{$num}by5r, .col-pc-#{$num}by5r, .col-tab-#{$num}by5r {
+		@extend %colspo;
+	}
+	.col-#{$num}by5nm, .col-pc-#{$num}by5nm, .col-tab-#{$num}by5nm, .col-#{$num}by5nmr, .col-pc-#{$num}by5nmr, .col-tab-#{$num}by5nmr  {
+		@extend %colsponm;
+	}
+}
+@for $num from 1 through 6 {
+	.col-#{$num}by7, .col-pc-#{$num}by7, .col-tab-#{$num}by7, .col-#{$num}by7r, .col-pc-#{$num}by7r, .col-tab-#{$num}by7r {
+		@extend %colspo;
+	}
+	.col-#{$num}by7nm, .col-pc-#{$num}by7nm, .col-tab-#{$num}by7nm, .col-#{$num}by7nmr, .col-pc-#{$num}by7nmr, .col-tab-#{$num}by7nmr {
+		@extend %colsponm;
+	}
+}
+
+@for $num from 1 through 12 {
+	.col-sp-#{$num}, .col-sp-#{$num}r {
+		margin: 0 $margin_sp_col $margin_sp_row;
+		padding: $padding_sp;
+		width: calc(#{100*$num/12}% - #{2*$margin_sp_col});
+	}
+	.col-sp-#{$num}nm, .col-sp-#{$num}nmr {
+		margin: 0 0 $margin_sp_row;
+		padding: $padding_spnm;
+		width: 100% * $num /12;
+	}
+}
+
+@for $num from 1 through 4 {
+	.col-sp-#{$num}by5, .col-sp-#{$num}by5r {
+		margin: 0 $margin_sp_col $margin_sp_row;
+		padding: $padding_sp;
+		width: calc(#{20*$num}% - #{2*$margin_sp_col});
+	}
+	.col-sp-#{$num}by5nm, .col-sp-#{$num}by5nmr {
+		margin: 0 $margin_sp_col $margin_sp_row;
+		padding: $padding_spnm;
+		width: 20% * $num;
+	}
+}
+
+@for $num from 1 through 6 {
+	.col-sp-#{$num}by7, .col-sp-#{$num}by7r {
+		margin: 0 $margin_sp_col $margin_sp_row;
+		padding: $padding_sp;
+		width: calc(#{(100*$num)/7}% - #{2*$margin_sp_col});
+	}
+	.col-sp-#{$num}by7nm, .col-sp-#{$num}by7nmr {
+		margin: 0 $margin_sp_col $margin_sp_row;
+		padding: $padding_spnm;
+		width: 100% * $num/7;
+	}
+}
+
+
+@media screen and (min-width:$tab) {
+	.float {
+		width: calc(100% + #{2*$margin_tab_col});
+		margin-left: (-$margin_tab_col);
+	}
+	
+	/* margin & padding settings @tablet screen */
+	%tabmargin {
+		margin: 0 $margin_tab_col $margin_tab_row;
+		padding: $padding_tab;
+	}
+	%tabmarginnm {
+		margin: 0 0 $margin_tab_row;
+		padding: $padding_tabnm;
+	}
+	
+	@for $num from 1 through 12 {
+		.col-#{$num}, .col-#{$num}r, .col-sp-#{$num}, .col-sp-#{$num}r, .col-tab-#{$num}, .col-tab-#{$num}r, .col-pc-#{$num}, .col-pc-#{$num}r {
+			@extend %tabmargin;
+		}
+		.col-#{$num}nm, .col-#{$num}nmr, .col-sp-#{$num}nm, .col-sp-#{$num}nmr, .col-tab-#{$num}nm, .col-tab-#{$num}nmr, .col-pc-#{$num}nm, .col-pc-#{$num}nmr {
+			@extend %tabmarginnm;
+		}
+	}	
+	@for $num from 1 through 4 {
+		.col-#{$num}by5, .col-#{$num}by5r, .col-sp-#{$num}by5, .col-sp-#{$num}by5r, .col-tab-#{$num}by5, .col-tab-#{$num}by5r, .col-pc-#{$num}by5, .col-pc-#{$num}by5r {
+			@extend %tabmargin;
+		}
+		.col-#{$num}by5nm, .col-#{$num}by5nmr, .col-sp-#{$num}by5nm, .col-sp-#{$num}by5nmr, .col-tab-#{$num}by5nm, .col-tab-#{$num}by5nmr, .col-pc-#{$num}by5nm, .col-pc-#{$num}by5nmr {
+			@extend %tabmarginnm;
+		}
+	}
+	@for $num from 1 through 6 {
+		.col-#{$num}by7, .col-#{$num}by7r, .col-sp-#{$num}by7, .col-sp-#{$num}by7r, .col-tab-#{$num}by7, .col-tab-#{$num}by7r, .col-pc-#{$num}by7, .col-pc-#{$num}by7r {
+			@extend %tabmargin;
+		}
+		.col-#{$num}by7nm, .col-#{$num}by7nmr, .col-sp-#{$num}by7nm, .col-sp-#{$num}by7nmr, .col-tab-#{$num}by7nm, .col-tab-#{$num}by7nmr, .col-pc-#{$num}by7nm, .col-pc-#{$num}by7nmr {
+			@extend %tabmarginnm;
+		}
+	}
+	
+	/* width settings @tablet screen */
+	//sp width settings
+	@for $num from 1 through 12 {
+		.col-sp-#{$num}, .col-sp-#{$num}r {
+			width: calc(#{100*$num/12}% - #{2*$margin_tab_col});
+		}
+	}
+	@for $num from 1 through 4 {
+		.col-sp-#{$num}by5, .col-sp-#{$num}by5r {
+			width: calc(#{20*$num}% - #{2*$margin_tab_col});
+		}
+	}
+	@for $num from 1 through 6 {
+		.col-sp-#{$num}by7, .col-sp-#{$num}by7r {
+			width: calc(#{(100*$num)/7}% - #{2*$margin_tab_col});
+		}
+	}
+	
+	// no mark col width
+	%width_tabhalf {
+		width: calc(50% - #{2*$margin_tab_col});
+	}
+	%width_tabhalfnm {
+		width: 50%;
+	}
+	%width_tabfull {
+		width: calc(100% - #{2*$margin_tab_col});
+	}
+	%width_tabfullnm {
+		width: 100%;
+	}
+	
+	// no mark
+	@for $num from 1 to 12 {
+		.col-#{$num}, .col-#{$num}r {
+			@extend %width_tabhalf;
+		}
+		.col-#{$num}nm, .col-#{$num}nmr {
+			@extend %width_tabhalfnm;
+		}
+	}
+	.col-12, .col-12r {
+		@extend %width_tabfull;
+	}
+	.col-12nm, .col-12nmr {
+		@extend %width_tabfullnm;
+	}
+	@for $num from 1 through 4 {
+		.col-#{$num}by5, .col-#{$num}by5r {
+			@extend %width_tabhalf;
+		}
+		.col-#{$num}by5nm, .col-#{$num}by5nmr {
+			@extend %width_tabhalfnm;
+		}
+	}
+	@for $num from 1 through 6 {
+		.col-#{$num}by7, .col-#{$num}by7r {
+			@extend %width_tabhalf;
+		}
+		.col-#{$num}by7nm, .col-#{$num}by7nmr {
+			@extend %width_tabhalfnm;
+		}
+	}
+	
+	// pc width settings;
+	@for $num from 1 through 12 {
+		.col-pc-#{$num}, .col-pc-#{$num}r {
+			@extend %width_tabfull;
+		}
+		.col-pc-#{$num}nm, .col-pc-#{$num}nmr {
+			@extend %width_tabfullnm;
+		}
+	}
+	@for $num from 1 through 4 {
+		.col-pc-#{$num}by5, .col-pc-#{$num}by5r {
+			@extend %width_tabfull;
+		}
+	}
+	@for $num from 1 through 6 {
+		.col-pc-#{$num}by7, .col-pc-#{$num}by7r {
+			@extend %width_tabfull;
+		}
+	}
+	
+	// tab width settings
+	@for $num from 1 through 12 {
+		.col-tab-#{$num}, .col-tab-#{$num}r {
+			width: calc(#{100*$num/12}% - #{2*$margin_tab_col});
+		}
+		.col-tab-#{$num}nm, .col-tab-#{$num}nmr {
+			width: 100% * $num/12;
+		}
+	}	
+	@for $num from 1 through 4 {
+		.col-tab-#{$num}by5, .col-tab-#{$num}by5r {
+			width: calc(#{20*$num}% - #{2*$margin_tab_col});
+		}
+		.col-tab-#{$num}by5nm, .col-tab-#{$num}by5nmr {
+			width: 20% * $num;
+		}
+	}
+	@for $num from 1 through 6 {
+		.col-tab-#{$num}by7, .col-tab-#{$num}by7r {
+			width: calc(#{(100*$num)/7}% - #{2*$margin_tab_col});
+		}
+		.col-tab-#{$num}by7nm, .col-tab-#{$num}by7nmr {
+			width: 100% * $num/7;
+		}
+	}
+}
+
+@media screen and (min-width:$pc) {
+	.float {
+		width: calc(100% + #{2*$margin_pc_col});
+		margin-left: (-$margin_pc_col);
+	}
+	
+	%pcmargin {
+		margin:  0 $margin_pc_col $margin_pc_row;
+		padding: $padding_pc;
+	}
+	%pcmarginnm {
+		margin:  0 0 $margin_pc_row;
+		padding: $padding_pcnm;
+	}
+	/* margin settings @pc screen */ 
+	@for $num from 1 through 12 {
+		.col-#{$num}, .col-#{$num}r, .col-sp-#{$num}, .col-sp-#{$num}r, .col-tab-#{$num}, .col-tab-#{$num}r, .col-pc-#{$num}, .col-pc-#{$num}r {
+			@extend %pcmargin;
+		}
+		.col-#{$num}nm, .col-#{$num}nmr, .col-sp-#{$num}nm, .col-sp-#{$num}nmr, .col-tab-#{$num}nm, .col-tab-#{$num}nmr, .col-pc-#{$num}nm, .col-pc-#{$num}nmr {
+			@extend %pcmarginnm;
+		}
+	}
+	@for $num from 1 through 4 {
+		.col-#{$num}by5, .col-#{$num}by5r {
+			@extend %pcmargin;
+			}
+		.col-#{$num}by5nm, .col-#{$num}by5nmr {
+			@extend %pcmarginnm;
+			}
+	}
+	@for $num from 1 through 6 {
+		.col-#{$num}by7, .col-#{$num}by7r {
+			@extend %pcmargin;
+		}
+		.col-#{$num}by7nm, .col-#{$num}by7nmr {
+			@extend %pcmarginnm;
+		}
+	}
+	/* width settings @pc screen */
+	// no mark width settings
+	@for $num from 1 through 12 {
+		.col-#{$num}, .col-#{$num}r {
+			width: calc(#{100*$num/12}% - #{2*$margin_pc_col});
+		}
+		.col-#{$num}nm, .col-#{$num}nmr {
+			width: 100% * $num/12;
+		}
+	}
+	@for $num from 1 through 4 {
+		.col-#{$num}by5, .col-#{$num}by5r {
+			width: calc(#{20*$num}% - #{2*$margin_pc_col});
+		}
+		.col-#{$num}by5nm, .col-#{$num}by5nmr {
+			width: calc(#{20*$num}% - #{2*$margin_pc_col});
+		}
+	}
+	@for $num from 1 through 6 {
+		.col-#{$num}by7, .col-#{$num}by7r {
+			width: calc(#{(100*$num)/7}% - #{2*$margin_pc_col});
+		}
+		.col-#{$num}by7nm, .col-#{$num}by7nmr {
+			width: calc(#{(100*$num)/7}% - #{2*$margin_pc_col});
+		}
+	}
+	
+	// sp width settings 
+	@for $num from 1 through 12 {
+		.col-sp-#{$num}, .col-sp-#{$num}r {
+			width: calc(#{100*$num/12}% - #{2*$margin_pc_col});
+		}
+	}
+	@for $num from 1 through 4 {
+		.col-sp-#{$num}by5, .col-sp-#{$num}by5r {
+			@extend %pcmargin;
+			width: calc(#{20*$num}% - #{2*$margin_pc_col});
+		}
+	}
+	@for $num from 1 through 6 {
+		.col-sp-#{$num}by7, .col-sp-#{$num}by7r {
+			@extend %pcmargin;
+			width: calc(#{(100*$num)/7}% - #{2*$margin_pc_col});
+		}
+	}
+	
+	// tab width settings
+	@for $num from 1 through 12 {
+		.col-tab-#{$num}, .col-tab-#{$num}r {
+			width: calc(#{100*$num/12}% - #{2*$margin_pc_col});
+		}
+	}
+	@for $num from 1 through 4 {
+		.col-tab-#{$num}by5, .col-tab-#{$num}by5r {
+			@extend %pcmargin;
+			width: calc(#{20*$num}% - #{2*$margin_pc_col});
+		} 
+	}
+	@for $num from 1 through 6 {
+		.col-tab-#{$num}by7, .col-tab-#{$num}by7r {
+			@extend %pcmargin;
+			width: calc(#{(100*$num)/7}% - #{2*$margin_pc_col});
+		}
+	}	
+	
+	//pc width settings
+	@for $num from 1 through 12 {
+		.col-#{$num}, .col-#{$num}r {
+			width: calc(#{100*$num/12}% - #{2*$margin_pc_col});
+		}
+		.col-#{$num}nm, .col-#{$num}nmr {
+			width: 100% * $num/12;
+		}
+	}
+	@for $num from 1 through 4 {
+		.col-#{$num}by5, .col-#{$num}by5r {
+			width: calc(#{20*$num}% - #{2*$margin_pc_col});
+		}
+		.col-#{$num}by5nm, .col-#{$num}by5nmr {
+			width: 20% * $num;
+		}
+	}
+	@for $num from 1 through 6 {
+		.col-#{$num}by7, .col-#{$num}by7r {
+			width: calc(#{(100*$num)/7}% - #{2*$margin_pc_col});
+		}
+		.col-#{$num}by7nm, .col-#{$num}by7nmr {
+			width: 100% * $num/7;
+		}
+	}
+	@for $num from 1 through 12 {
+		.col-pc-#{$num}, .col-pc-#{$num}r {
+			width: calc(#{100*$num/12}% - #{2*$margin_pc_col});
+		}
+		.col-pc-#{$num}nm, .col-pc-#{$num}nmr {
+			width: 100% * $num/12;
+		}
+	}
+	@for $num from 1 through 4 {
+		.col-pc-#{$num}by5, .col-pc-#{$num}by5r {
+			width: calc(#{20*$num}% - #{2*$margin_pc_col});
+		}
+		.col-pc-#{$num}by5nm, .col-pc-#{$num}by5nmr {
+			width: 20% * $num;
+		}
+	}
+	@for $num from 1 through 6 {
+		.col-pc-#{$num}by7, .col-pc-#{$num}by7r {
+			width: calc(#{(100*$num)/7}% - #{2*$margin_pc_col});
+		}
+		.col-pc-#{$num}by7nm, .col-pc-#{$num}by7nmr {
+			width: 100% * $num/7;
+		}
+	}
+}
+
+// flexbox grid
+.flex {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	align-items: stretch;
+	-webkit-flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	width: calc(100% + #{2*$margin_sp_col});
+	margin-left: (-$margin_sp_col);
+}
+
+.flex-nm {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	align-items: stretch;
+	-webkit-flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	width: 100%;
+	margin: 0;
+}
+
+.flex-r {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	align-items: stretch;
+	-webkit-flex-direction: row-reverse;
+	-ms-flex-direction: row-reverse;
+	flex-direction: row-reverse;
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	width: calc(100% + #{2*$margin_sp_col});
+	margin-left: (-$margin_sp_col);
+}
+.flex-nmr {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	align-items: stretch;
+	-webkit-flex-direction: row-reverse;
+	-ms-flex-direction: row-reverse;
+	flex-direction: row-reverse;
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	width: 100%;
+	margin: 0;
+}
+
+.flex-sp-eq {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	align-items: stretch;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+	-webkit-flex-wrap: nowrap;
+	flex-wrap: nowrap;
+	-webkit-flex-grow: 1;
+	flex-grow: 1;
+	flex-shrink: 1;
+	flex-basis: 100%;
+	justify-content: space-around;
+	width: 100%;
+	>* {
+		width: 100%;
+	}
+}
+
+.flex-tab-eq, .flex-pc-eq {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	align-items: stretch;
+	-webkit-flex-direction: column;
+	flex-direction: column;
+	-webkit-flex-wrap: nowrap;
+	flex-wrap: nowrap;
+	-webkit-flex-grow: 1;
+	flex-grow: 1;
+	width: 100%;
+	>* {
+		width: 100%;
+	}
+}
+
+@media screen and (min-width:$tab) {
+	.flex, .flex-r {
+		width: calc(100% + #{2*$margin_tab_col});
+		margin-left: (-$margin_tab_col);
+	}
+	
+	.flex-tab-eq {
+		-webkit-flex-direction: row;
+		flex-direction: row;
+	}
+}
+
+@media screen and (min-width:$pc) {
+	.flex, .flex-r {
+		width: calc(100% + #{2*$margin_pc_col});
+		margin-left: (-$margin_pc_col);
+	}
+	
+	.flex-pc-eq {
+		-webkit-flex-direction: row;
+		flex-direction: row;
+	}
+}

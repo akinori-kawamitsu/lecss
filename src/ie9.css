@@ -1,0 +1,29 @@
+/* base patch */
+/* grid patch */
+.flex-sp-eq, .flex-tab-eq, .flex-pc-eq {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+.flex-sp-eq > *, .flex-tab-eq > *, .flex-pc-eq > * {
+  display: table-cell;
+}
+
+@media screen and (max-width: 480px) {
+  .flex-tab-eq {
+    display: block;
+  }
+  .flex-tab-eq > * {
+    display: block;
+  }
+}
+@media screen and (max-width: 768px) {
+  .flex-pc-eq {
+    display: block;
+  }
+  .flex-pc-eq > * {
+    display: block;
+  }
+}
+
+/*# sourceMappingURL=ie9.css.map */

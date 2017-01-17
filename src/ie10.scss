@@ -1,0 +1,28 @@
+@charset "utf-8";
+@import "scss/_parameter";
+/* base patch */
+
+/* grid patch */
+.flex-sp-eq, .flex-tab-eq, .flex-pc-eq {
+	display: table;
+	width: 100%;
+	table-layout: fixed;
+	>* {
+		display: table-cell;
+	}
+}
+
+@media screen and (max-width:$sp) {
+	.flex-tab-eq, .flex-tab-eq>* {
+		display: block;
+		height: auto;
+	}
+}
+
+@media screen and (max-width:$tabmax) {
+	.flex-pc-eq, .flex-pc-eq>* {
+		display: block;
+		height: auto;
+	}
+}
+

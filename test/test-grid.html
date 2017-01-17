@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="../src/style.css" />
+        <link rel="stylesheet" type="text/css" href="test.css" />
+        <title>Komitsuboshi-css test</title>
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+		<script src="../src/js/lecss.js" type="text/javascript"></script>
+        <script type="text/javascript">
+		  $(function(){
+			  $("#header").load("header.html");
+		  })
+		</script>
+		<script>
+		var ua = window.navigator.userAgent.toLowerCase();
+		if (ua.indexOf("msie 10") != -1){
+		document.write('<link rel="stylesheet" type="text/css" href="../src/ie10.css" />');
+		}
+		</script>
+        <!--[if lte IE 9]>
+		<script src="../src/jquery.matchHeight.js" type="text/javascript"></script>
+		<script type="text/javascript">
+		jQuery(function() {
+			jQuery("[class^='flex'] [class^='col-']").matchHeight();
+		});
+		</script>
+		<script src="../src/html5shiv.js" type="text/javascript"></script>
+		<![endif]-->
+        <!--[if lt IE 9]>
+		<script src="bower_components/html5shiv/dist/html5shiv.js" type="text/javascript"></script>
+		<link rel="stylesheet" type="text/css" href="../src/ie8.css" />
+		<![endif]-->
+    </head>
+    <body>
+      <div class="header" id="header">
+      </div><!-- header -->
+        <div class="container">
+	        <h1>Komitsuboshi-css動作テストファイル(col-pc-N)</h1>
+        	<section>
+        		<h2>float-col優先順位チェック</h2>
+        		<h3>昇順テスト</h3>
+        		<div class="float">
+        			<div class="col-3 col-pc-4 col-tab-7 col-sp-10"><p>col-3 col-pc-4 col-tab-7 col-sp-10</p><p>pc:4, tab:7, sp:10で表示されればOK</p></div>
+        			<div class="col-sp-4 clear">PCでこの長さ</div>
+        			<div class="col-sp-7 clear">tabでこの長さ</div>
+        			<div class="col-sp-10 clear">spでこの長さ</div>
+				</div>
+        		<h3>降順テスト</h3>
+        		<div class="float">
+        			<div class="col-10 col-pc-7 col-tab-4 col-sp-3"><p>col-10 col-pc-7 col-tab-4 col-sp-3</p><p>pc:7, tab:4, sp:3で表示されればOK</p></div>
+        			<div class="col-sp-7 clear">pcでこの長さ</div>
+        			<div class="col-sp-4 clear">tabでこの長さ</div>
+        			<div class="col-sp-3 clear">spでこの長さ</div>
+				</div>
+        		<h3>無印昇順テスト</h3>
+        		<div class="float">
+        			<div class="col-3 col-tab-7 col-sp-10"><p>col-3 col-tab-7 col-sp-10</p><p>pc:3, tab:7, sp:10で表示されればOK</p></div>
+        			<div class="col-sp-3 clear">pcでこの長さ</div>
+        			<div class="col-sp-7 clear">tabでこの長さ</div>
+        			<div class="col-sp-10 clear">spでこの長さ</div>
+				</div>
+        		<h3>無印降順テスト</h3>
+        		<div class="float">
+        			<div class="col-10 col-tab-4 col-sp-3"><p>col-10 col-tab-4 col-sp-3</p><p>pc:10, tab:4, sp:3で表示されればOK</p></div>
+        			<div class="col-sp-10 clear">pcでこの長さ</div>
+        			<div class="col-sp-4 clear">tabでこの長さ</div>
+        			<div class="col-sp-3 clear">spでこの長さ</div>
+				</div>
+			   
+        		<h3>無印-sp昇順テスト</h3>
+        		<div class="float">
+        			<div class="col-3 col-sp-10"><p>col-3 col-sp-10</p><p>pc:3, tab:6, sp:10で表示されればOK</p></div>
+        			<div class="col-sp-3 clear">pcでこの長さ</div>
+        			<div class="col-sp-6 clear">tabでこの長さ</div>
+        			<div class="col-sp-10 clear">spでこの長さ</div>
+				</div>
+        		<h3>無印-sp降順テスト</h3>
+        		<div class="float">
+        			<div class="col-10 col-sp-3"><p>col-10 col-sp-3</p><p>pc:10, tab:6, sp:3で表示されればOK</p></div>
+        			<div class="col-sp-10 clear">pcでこの長さ</div>
+        			<div class="col-sp-6 clear">tabでこの長さ</div>
+        			<div class="col-sp-3 clear">spでこの長さ</div>
+				</div>
+
+			   
+			   <h2>float-colマージンなし優先順位チェック</h2>
+        		<h3>マージンなし昇順テスト</h3>
+        		<div class="float-nm">
+        			<div class="col-3nm col-pc-4nm col-tab-7nm col-sp-10nm"><p>col-3 col-pc-4 col-tab-7 col-sp-10</p><p>pc:4, tab:7, sp:10で表示されればOK</p></div>
+        			<div class="col-sp-4nm clear">PCでこの長さ</div>
+        			<div class="col-sp-7nm clear">tabでこの長さ</div>
+        			<div class="col-sp-10nm clear">spでこの長さ</div>
+				</div>
+        		<h3>マージンなし降順テスト</h3>
+        		<div class="float-nm">
+        			<div class="col-10nm col-pc-7nm col-tab-4nm col-sp-3nm"><p>col-10 col-pc-7 col-tab-4 col-sp-3</p><p>pc:7, tab:4, sp:3で表示されればOK</p></div>
+        			<div class="col-sp-7nm clear">pcでこの長さ</div>
+        			<div class="col-sp-4nm clear">tabでこの長さ</div>
+        			<div class="col-sp-3nm clear">spでこの長さ</div>
+				</div>
+        		<h3>マージンなし無印昇順テスト</h3>
+        		<div class="float-nm">
+        			<div class="col-3nm col-tab-7nm col-sp-10nm"><p>col-3 col-tab-7 col-sp-10</p><p>pc:3, tab:7, sp:10で表示されればOK</p></div>
+        			<div class="col-sp-3nm clear">pcでこの長さ</div>
+        			<div class="col-sp-7nm clear">tabでこの長さ</div>
+        			<div class="col-sp-10nm clear">spでこの長さ</div>
+				</div>
+        		<h3>マージンなし無印降順テスト</h3>
+        		<div class="float">
+        			<div class="col-10nm col-tab-4nm col-sp-3nm"><p>col-10 col-tab-4 col-sp-3</p><p>pc:10, tab:4, sp:3で表示されればOK</p></div>
+        			<div class="col-sp-10nm clear">pcでこの長さ</div>
+        			<div class="col-sp-4nm clear">tabでこの長さ</div>
+        			<div class="col-sp-3nm clear">spでこの長さ</div>
+				</div>
+			   
+        		<h3>マージンなし無印-sp昇順テスト</h3>
+        		<div class="float-nm">
+        			<div class="col-3nm col-sp-10"><p>col-3 col-sp-10</p><p>pc:3, tab:6, sp:10で表示されればOK</p></div>
+        			<div class="col-sp-3nm clear">pcでこの長さ</div>
+        			<div class="col-sp-6nm clear">tabでこの長さ</div>
+        			<div class="col-sp-10nm clear">spでこの長さ</div>
+				</div>
+        		<h3>マージンなし無印-sp降順テスト</h3>
+        		<div class="float-nm">
+        			<div class="col-10nm col-sp-3"><p>col-10 col-sp-3</p><p>pc:10, tab:6, sp:3で表示されればOK</p></div>
+        			<div class="col-sp-10nm clear">pcでこの長さ</div>
+        			<div class="col-sp-6nm clear">tabでこの長さ</div>
+        			<div class="col-sp-3nm clear">spでこの長さ</div>
+				</div>
+			   
+        	</section>
+        </div><!-- container -->
+    </body>
+</html>

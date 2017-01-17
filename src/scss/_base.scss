@@ -1,0 +1,338 @@
+@charset "utf-8";
+@import "_parameter";
+/* style base */
+section {
+	clear: both;
+	padding-top: 10px;
+}
+
+code {
+	display: block;
+	overflow-x: scroll;
+	white-space: pre;
+	font-size: $font_small;
+	font-family: $font_code;
+}
+
+blockquote {
+	margin: 10px;
+	padding: 10px;
+}
+
+table {
+	max-width: 100%;
+	border-collapse: collapse;
+}
+
+.table-fix {
+	table-layout: fixed;
+}
+
+thead {
+}
+
+th, td {
+	padding: 0 3px;
+	empty-cells: show;
+}
+
+ul, ol {
+	padding-left: 2em;
+}
+
+p {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	&:link, &:visited{
+		color: $color_link;
+		text-decoration: none;
+	}
+	&:hover, &:active {
+		border-bottom: 1px dashed;
+		opacity: $a_opacity;
+		-ms-filter: "#{$a_filter}";
+	}
+}
+
+img {
+	padding-top: (($line_height - 1)/2) + em;
+	max-width: 100%;
+	width: auto;
+	height: auto;
+}
+
+.aligncenter {
+	display: block;
+	margin: 0 auto;
+}
+
+.alignleft {
+	float: left;
+	margin: 0 $margin_sp_col 0 0;
+}
+
+.alignright {
+	float: right;
+	margin: 0 0 0 $margin_sp_col;
+}
+
+@media screen and (min-width:$tab) {
+	img.alignleft, img.alignright {
+		max-width: 50%;
+	}
+}
+
+//　要素のあとに改行を入れるクラス　br
+.br {
+	display: block;
+	float: none;
+	margin: 0;
+	&::after {
+		content: "\A";
+		white-space: pre;
+	}
+}
+
+nav, nav ul, nav li {
+	display: block;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+@media screen and (max-width:$tabmax) {
+//　tabサイズで画像の回り込みを解消するクラス　br-tab
+	.alignleft.br-tab, .alignright.br-tab {
+		display: block;
+		float: none;
+		margin: 0;
+		max-width: 100%;
+		&::after {
+			content: "\A";
+			white-space: pre;
+		}
+	}
+//  tabサイズで中央配置にする　tab-center
+	.tab-center, img.alignleft.tab-center, img.alignright.tab-center {
+		display: block;
+		float: none;
+		margin: 0 auto;
+	}
+}
+
+@media screen and (max-width:$sp) {
+//　spサイズで画像の回り込みを解消する。（デフォルト設定）
+	img.alignleft, img.alignright {
+		position: relative;
+		right: 0;
+		display: block;
+		float: none;
+		margin: 0;
+		&::after {
+			content: "\A";
+			white-space: pre;
+		}
+	}
+//　spサイズでも画像の最大幅を50%にして、回り込みを有効にするクラス　br-no
+	img.alignleft.br-no {
+		display: inline;
+		float: left;
+		margin: 0  $margin_sp_col 0 0;
+		max-width: 50%;
+		&::after {
+			content: "";
+			white-space: pre;
+		}
+	}
+	img.alignright.br-no {
+		display: inline;
+		float: right;
+		margin: 0 0 0  $margin_sp_col;
+		max-width: 50%;
+		&::after {
+			content: "";
+			white-space: pre;
+		}
+	}
+//  spサイズで中央配置にする　sp-center
+	.sp-center, img.alignleft.sp-center, img.alignright.sp-center {
+		display: block;
+		margin: 0 auto;
+	}
+}
+
+.wrapper {
+	position: relative;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+.container {
+	margin: 0 auto;
+	max-width: $container;
+	width: 100%;
+}
+
+@media screen and (max-width:$container) {
+	.container {
+		padding: 0 5px;
+	}
+}
+
+.clear {
+	clear: both;
+}
+
+.clearfix {
+	@include clearfix;
+}
+
+.list-style-none {
+	padding: 0;
+	list-style: none;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-justify {
+	text-align: justify;
+}
+
+.caption {
+	display: block;
+	box-sizing: content-box;
+	margin-bottom: $margin_sp_row;
+	max-width: 100%;
+	line-height: 1.2;
+}
+
+.caption-img {
+	display: inline-block;
+	max-width: 100%;
+}
+
+.caption-img > img {
+	max-width: 100%;
+}
+
+.caption-text {
+	display: inline;
+   font-size: 14px;
+}
+
+.table {
+	display: table;
+}
+
+.table-cell {
+	display: table-cell;
+}
+
+.middle-container {
+	display: table;
+}
+
+.middle-item {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+// display control
+.tab, .pc {
+	display: none;
+}
+.sp {
+	display: block;
+}
+@media screen and (min-width:$tab) {
+	.sp {
+		display: none;
+	}
+	.tab {
+		display: block;
+	}
+	.tab-none, .tab-none * {
+		display: none !important;
+	}
+}
+
+@media screen and (min-width:$pc) {
+	.tab {
+		display: none;
+	}
+	.pc {
+		display: block;
+	}
+	.pc-none, .pc-none * {
+		display: none !important;
+	}
+}
+
+
+.youtube {
+	position: relative;
+	width: 100%;
+	padding-top: 56.25%;
+	 iframe {
+	  position: absolute;
+	  top: 0;
+	  right: 0;
+	  width: 100% !important;
+	  height: 100% !important;
+	}
+}
+.gmap {
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 30px;
+	height: 0;
+	overflow: hidden;
+	max-width: 90%;
+	margin: auto;
+	iframe,
+	object,
+	embed {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+$mgn: 5;
+@while $mgn <=20 {
+	$mgn: $mgn + 5;
+	.mt#{$mgn} {
+		margin-top: #{$mgn}px;
+	}
+	.mb#{$mgn} {
+		margin-bottom: #{$mgn}px;
+	}
+}
+	
+$mgnl: 30;
+@while $mgnl <=60 {
+	$mgnl: $mgnl + 10;
+	.mt-#{$mgnl} {
+		margin-top: #{$mgnl}px;
+	}
+	.mb-#{$mgnl} {
+		margin-bottom: #{$mgnl}px;
+	}
+}

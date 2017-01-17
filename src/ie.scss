@@ -1,0 +1,10 @@
+@charset "utf-8";
+@import "scss/_parameter";
+input {
+	&[type="submit"], &[type="reset"], &[type="button"] {
+		padding: 0.25em 0.38em 0;
+	}
+}
+select {
+	font-family: meiryo, sans-serif;
+}

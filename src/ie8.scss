@@ -1,0 +1,84 @@
+@charset "utf-8";
+@import "scss/_parameter";
+/* base patch */
+.container {
+	min-width: $sp;
+}
+
+/* grid patch */
+.flex-sp-eq, .flex-tab-eq, .flex-pc-eq {
+	display: table;
+	width: 100%;
+	table-layout: fixed;
+	>* {
+		display: table-cell;
+	}
+}
+
+.float, .flex, .flex-r {
+	margin-left: (-$margin_ie_col);
+	width: 100% + (2*$margin_ie_col);
+		&::after {
+			@include clearfix;
+			}
+}
+ 
+%iemargin {
+	margin:  0 $margin_ie_col $margin_pc_row;
+	padding: $padding_ie;
+}
+
+%col_ie {
+	float: left;
+	margin: 0 $margin_ie_col $margin_pc_row;
+}
+
+%col_ier {
+	float: right;
+	margin: 0 $margin_ie_col $margin_pc_row;
+}
+
+@for $num from 1 through 12 {
+	// float settings
+	.col-#{$num}, .col-pc-#{$num}, .col-tab-#{$num}, .col-sp-#{$num} {
+		@extend %col_ie;
+	}	
+	.col-#{$num}r, .col-pc-#{$num}r, .col-tab-#{$num}r, .col-sp-#{$num}r {
+		@extend %col_ier;
+	}
+	.col-#{$num}, .col-pc-#{$num}, .col-tab-#{$num}, .col-sp-#{$num},
+	.col-#{$num}r, .col-pc-#{$num}r, .col-tab-#{$num}r, .col-sp-#{$num}r {
+		width: (100%*$num/12) - (2*$margin_ie_col);
+	}
+}
+
+@for $num from 1 through 4 {
+	// float settings
+	.col-#{$num}by5, .col-pc-#{$num}by5, .col-tab-#{$num}by5, .col-sp-#{$num}by5 {
+		@extend %col_ie;
+	}
+	.col-#{$num}by5r, .col-pc-#{$num}by5r, .col-tab-#{$num}by5r, .col-sp-#{$num}by5r {
+		@extend %col_ier;
+	}
+	// sp width settings
+	.col-#{$num}by5, .col-pc-#{$num}by5, .col-tab-#{$num}by5, .col-sp-#{$num}by5,
+	.col-#{$num}by5r, .col-pc-#{$num}by5r, .col-tab-#{$num}by5r, .col-sp-#{$num}by5r {
+		width: (100%*$num/5) - (2*$margin_ie_col);
+	}
+}
+
+@for $num from 1 through 6 {
+	// float settings
+	.col-#{$num}by7, .col-pc-#{$num}by7, .col-tab-#{$num}by7, .col-sp-#{$num}by7 {
+		@extend %col_ie;
+	}
+	.col-#{$num}by7r, .col-pc-#{$num}by7r, .col-tab-#{$num}by7r, .col-sp-#{$num}by7r {
+		@extend %col_ier;
+	}
+	// sp width settings
+	.col-#{$num}by7, .col-pc-#{$num}by7, .col-tab-#{$num}by7, .col-sp-#{$num}by7,
+	.col-#{$num}by7r, .col-pc-#{$num}by7r, .col-tab-#{$num}by7r, .col-sp-#{$num}by7r {
+		width: (100%*$num/7) - (2*$margin_ie_col);
+	}
+}
+
