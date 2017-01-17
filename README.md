@@ -198,12 +198,12 @@ tabサイズ未満で回り込みを解消し、中央に配置して、最大�
 + jQuery と lecss.js を読み込ませます。  
 + キャプションを付ける img をdivで囲み、 "caption-img" を付けます。また、キャプションのテキストに "caption-text" を付け、両者を "caption" を付けたブロックレベル要素でラップします。  
 
-	<div class="caption">
-		<div  class="caption-img">
-		  <img alt="" src="" style="margin-right:5px;" /><img alt="" src="250x40.png" />
-		</div>
-		<p class="caption-text">text</p>
-	</div>
+    <div class="caption">
+    	<div  class="caption-img">
+    	  <img alt="" src="" style="margin-right:5px;" /><img alt="" src="250x40.png" />
+    	</div>
+    	<p class="caption-text"></p>
+    </div>
 	
 "caption" 内の画像の幅を自動的に計算して "caption-text" の幅にします。  
 複数個のimgを使う場合は、スペースや改行を入れずに並べ、img の間に設ける隙間はcssで指定してください。改行などを使うと、iOSでは正しく計算できません。  
@@ -227,7 +227,8 @@ tab-none: tabサイズのときには必ず消去する
 
 pc-none と tab-none は　display: none !important; が付与されているので、気を付けて使ってください。  
 
-##mt-{num}, mb-{num}. ({num}には数字が入ります)
+###mt-{num}, mb-{num}
+{num}には数字が入ります。  
 mt-{num}: margin-top を px単位で指定します。20px までは 5px 刻み、20px から 60px までは10px刻みで設定します。  
 mb-{num}: margin-bottom px単位で指定します。20px までは 5px 刻み、20px から 60px までは10px刻みで設定します。  
 
