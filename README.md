@@ -19,19 +19,19 @@ ie8まで“一応”対応したCSSグリッドシステム
 div class="float"は、Bootstrapにおけるrowと同じ役割です。  
 
 
-{target} (is Breakpoint size)  
+{target} (breakpointを示します。)  
   sp (smartphone:320~480px)  
   tab (tablet:481~768px)  
   pc (pc size display:769px~)  
   
-  ※これらの値は"src/scss/_parameter.scss" の　breackpoint settings で変更できます。  
+  ※これらの値は"src/scss/_parameter.scss" の　breakpoint settings で変更できます。  
 
 
-{size}  (is grid separete units)  
- number ends:	1~12, 1by5~4by5, 1by7~6by7,  
- r ends: 		1r~12r, 1by5~4by5r, 1by7~6by7r,  
- nm ends:		1nm~12nm, 1by5nm~4by5nm,  1by7nm~6by7nm,  
- nmr ends:		1nmr~12nmr, 1by5nmr~4by5nmr, 1by7nmr~6by7nmr,  
+{size}  (グリッドの分割単位を示します。)  
+ 1~12, 1by5~4by5, 1by7~6by7,  
+ 1r~12r, 1by5~4by5r, 1by7~6by7r,  
+ 1nm~12nm, 1by5nm~4by5nm,  1by7nm~6by7nm,  
+ 1nmr~12nmr, 1by5nmr~4by5nmr, 1by7nmr~6by7nmr,  
  
  1~12は12分割で占める割合です。  
  1by5~4by5は5分の1から5分の4、  
@@ -104,8 +104,8 @@ WordPressのコードディング基準に合わせるためのcsscombファイ�
 bradyvercher氏作。  
 
 
-##Usage
-Follow codes write in head tag  
+##使い方
+次のコードを head 内に記述します。
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="style.css" />
