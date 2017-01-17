@@ -18,17 +18,20 @@ ie8まで“一応”対応したCSSグリッドシステム
 	  <div class="col-{target}-{size}"></div>
 	</div>
 
+具体的には
 
     <div class="float">
-	  <div class="col-sp-1"></div>
-	  <div class="col-sp-11"></div>
+	  <div class="col-sp-12 col-tab-6 col-pc-4"></div>
+	  <div class="col-sp-12 col-tab-6 col-pc-4"></div>
+	  <div class="col-sp-12 col-pc-4"></div>
 	</div>
 
+のようになります。
 div class="float"は、Bootstrapにおけるrowと同じ役割です。  
 
 
 {target} (グリッドの分割を行う最小サイズを指定します。)
-考え方は Bootstrap の xs, sm, md と同じです。
+考え方は Bootstrap の xs, sm, md と同じです。  
   sp (smartphone:~480px)  
   tab (tablet:~768px)  
   pc (pc size display:769px~)  
@@ -37,7 +40,14 @@ div class="float"は、Bootstrapにおけるrowと同じ役割です。
 
 LECSSの場合、{target} を指定しないパターンも作ることができます。  
 その場合、{size} で指定した分割単位が適用されるのは pc サイズのみで、tab サイズでは50%ずつの2分割、sp サイズでは100% の幅になります。
- 
+例：
+
+    <div class="float">
+	  <div class="col-4"></div>
+	  <div class="col-4"></div>
+	  <div class="col-4"></div>
+	</div>
+
 
 {size}  (グリッドの分割単位を示します。)  
  1~12, 1by5~4by5, 1by7~6by7,  
