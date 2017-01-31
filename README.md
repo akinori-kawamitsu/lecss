@@ -1,4 +1,4 @@
-# LECSS ver 1.0.0
+# LECSS ver 1.0.1
 LECSS is "legacy css" grid system.
 Support:
  IE8, 9, 10, 11, edge, chrome, safari, firefox
@@ -260,3 +260,4 @@ mb-{num}: margin-bottom px単位で指定します。20px までは 5px 刻み�
 ##変更履歴
 ※バージョンは semantic versioning <http://semver.org/lang/ja/> に基づいて付けています。  
 ver 1.0.0　公開  
+1.0.1　clearfixのバグ修正
