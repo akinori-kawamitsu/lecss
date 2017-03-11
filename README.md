@@ -1,4 +1,4 @@
-# LECSS ver 1.0.1
+# LECSS ver 2.0.0
 LECSS is "legacy css" grid system.
 Support:
  IE8, 9, 10, 11, edge, chrome, safari, firefox
