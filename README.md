@@ -144,9 +144,6 @@ bradyvercher氏作。
 	else if (ua.indexOf("linux; u;") >0){
 	document.write('<link rel="stylesheet" type="text/css" href="ie10.css" />');
 	}
-	else if (ua.indexOf("chrome") != -1){
-		document.write('<link rel="stylesheet" type="text/css" href="chrome.css" />');
-	}
 	</script>
 	<!--[if lte IE 9]>
 	<script src="./js/jquery.matchHeight.js" type="text/javascript"></script>
@@ -261,3 +258,4 @@ mb-{num}: margin-bottom px単位で指定します。20px までは 5px 刻み�
 ※バージョンは semantic versioning <http://semver.org/lang/ja/> に基づいて付けています。  
 ver 1.0.0　公開  
 1.0.1　clearfixのバグ修正
+2.0.0 フォントの設定を変更。

@@ -32,7 +32,7 @@ $container:980px;
 
 // font settings
 $font_serif: "游明朝", "Yu Mincho", YuMincho, "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", serif;
-$font_sanserif:  "游ゴシック", "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+$font_sanserif: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Yu Gothic", YuGothic, Verdana, Meiryo, "M+ 1p", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", "MS PGothic",　sans-serif;
 $font_code: Consolas, 'Courier New', Courier, Monaco, monospace, "Osaka－等幅", Osaka-mono, "ＭＳ ゴシック", "MS Gothic";
 
 $font_size: 16px;
